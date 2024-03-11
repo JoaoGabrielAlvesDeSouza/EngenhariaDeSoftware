@@ -55,26 +55,51 @@
   <li> hotfix (branch de correção de bugs urgentes) que se origina na master </li>
 </ul>
 <p> Para verificar em qual branch você está no momento basta usar um: </p>
+
 ````
   git branch
 ````
+
 <p> Caso queira criar uma nova branch, você deve, em primeiro lugar, ir para a branch que deve ser copiada. Por exemplo, sempre que eu quiser criar uma branch de feature nova, antes eu devo me mover para a develop, então poderei criar a branch. Com o comando abaixo você pode criar uma nova branch.</p>
+
 ````
   git branch nomeDaBranchQueVoceQuerCriar
 ````
+
 <p> Com o temmpo será necessário deletar branches. Para isso você deve sair dela e executar o comando abaixo: </p>
+
 ````
     git branch -d nomeDaBranchQueVaiSerDeletada
 ````
+
 <p> Caso você queira deletar mais de uma ao mesmo tempo, poderá colocar vários nomes de branches após o -d, todos separados por espaço. Nunca delete a master ou a develop, elas  existirão durante todo o projeot de forma permanente. </p>
 
 <h3> git checkout </h3>
 <p> Para trocar a branch em que você está você pode usar um: </p>
+
 ````
   git  checkout nomeDaBranchQueVoceQuerIr
 ````
+
 <p> Caso você queira criar uma nova branch e ir imediatamente para ela o comando abaixo faz isso: </p>
+
 ````
   git checkout -b nomeDaBranchQueVaiSerCriada
 ````
+
 <p> Se você não quiser usar o comando acima, poderá fazer da forma mais longa, usando o git branch e depois o git checkout. </p>
+
+<h3> git merge </h3>
+
+<p> Após criar uma branch, se deslocar para dentro dela e validar que todas as modificações feitas tiveram o efeito esperado é necessário unir ela à sua branch de origem. Por exemplo, a branch de feature se origina na develop, logo, após você concluir todas as alterações na sua branch, mova-se para a branch de origem (neste caso a develop) e execute o comando abaixo: </p>
+
+````
+  git merge nomeDaBranch
+````
+
+<p> Assim, para unir a branch de feature à branch develop eu primeiro uso um gitt checkout develop, git merge branchDeFeature e depois um git branch -d branchDeFeature, pois após o merge as alterações da branchDeFeature foram mescladas com a branch develop, pois não há mais a necessidade da branchDeFeture continuar no projeto, então a deletamos.  </p>
+
+<h2> Trabalhando de forma remota </h2>
+
+<p> Até agora vimos que o git tem várias funcionalidades, porém tudo ainda é local. Quando você relizar um git commit isso ainda é visível apenas para você.  Quando se trabalha em equipes é necessário que todos tenham acesso à mesma versão do código. Por isso a plataforma git hub possui integração com o git, para que você possa armazenar seu proojeto lá, assim, as alterações que você  faz ficarão disponíveis para outras pessoas. </p>
+<p> Para isso crie uma conta no git hub, e então crie uma pasta nova, dando-a o mesmo nome do seu projeto. </p>
