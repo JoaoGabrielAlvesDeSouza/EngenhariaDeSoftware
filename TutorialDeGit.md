@@ -42,37 +42,39 @@
 </ul>
 
 <h3> git branch </h3>
-<p> O git branch cria uma nova ramificação do git, isso faz com que você possa criar a sua e modificar ela, e se suas modificações funcionarem você une ela com a branch de onde ela veio, e caso suas modificações deem errado você pode apagar a branch que você criou. </p>
-<p> É quase como se você copiasse o projeto todo, modificasse ele e se funcionar você une ele ao antigo. Assim ao invés de alterar o projeto  diretamente você altera apenas a branch. O comando abaixo apenas permite com que você visualize a branch em que você está (por  padrão é a master). </p>
 
+<p> Quando vocês deseja fazer alterações num código mas não quer que um possível erro causado por elas se espalhe pelo software há um meio de fazer isso. Ao criar um branch você pode como que clonar todo o projeto para uma linha isolada, e assim você aplica as alterações nela, e se tudo ocorrer bem você une ela à linhagem que a deu origem.</p>
+<p> Num projeto git por padrão você trabalhará numa branch chamada master. Esta é a branch de produção, ou seja, a branch que contém o software no estado que os usuários veem. Todas as vezes que um software atualiza, essa é a branch de atualização. </p>
+<p> Os programadores criam uma branch que se origina na master, chamada develop, e essa é a branch que os desenvolvedores terão acesso. Quando a develop está com mudanças significativas e estáveis, ela é unida à master, para que os usuários tenham acesso à mudança. </p>
+<p> Os nomes utilizados nas branches  seguem um padrão, e são eles: </p>
+<ul>  
+  <li> master (branch de produção) </li>
+  <li> develop (branch de desenvolvimento) que se origina na master </li>
+  <li> feature (branch de uma nova funcionalidade) que se origina na develop </li>
+  <li> bugfix (branch de correção de bugs) que se origina na develop </li>
+  <li> hotfix (branch de correção de bugs urgentes) que se origina na master </li>
+</ul>
+<p> Para verificar em qual branch você está no momento basta usar um: </p>
 ````
   git branch
 ````
+<p> Caso queira criar uma nova branch, você deve, em primeiro lugar, ir para a branch que deve ser copiada. Por exemplo, sempre que eu quiser criar uma branch de feature nova, antes eu devo me mover para a develop, então poderei criar a branch. Com o comando abaixo você pode criar uma nova branch.</p>
+````
+  git branch nomeDaBranchQueVoceQuerCriar
+````
+<p> Com o temmpo será necessário deletar branches. Para isso você deve sair dela e executar o comando abaixo: </p>
+````
+    git branch -d nomeDaBranchQueVaiSerDeletada
+````
+<p> Caso você queira deletar mais de uma ao mesmo tempo, poderá colocar vários nomes de branches após o -d, todos separados por espaço. Nunca delete a master ou a develop, elas  existirão durante todo o projeot de forma permanente. </p>
 
 <h3> git checkout </h3>
-<p> O git checkout te permite trocar de branches. </p>
-
+<p> Para trocar a branch em que você está você pode usar um: </p>
 ````
-git checkout nomeDaBranchDeDestino
+  git  checkout nomeDaBranchQueVoceQuerIr
 ````
-
-<p> Outra utilizade dele é criar uma branch e te mover para ela. </p>
-
+<p> Caso você queira criar uma nova branch e ir imediatamente para ela o comando abaixo faz isso: </p>
 ````
-  git git checkout -b nomeDaBranch
+  git checkout -b nomeDaBranchQueVaiSerCriada
 ````
-
-<h3> git merge </h3>
-
-<p> Depois de criar uma branch e realizar as alterações desejadas você deve uní-la à branch de onde ela se originou. </p>
-
-````
-git checkout branchDeOrigem
-git merge branchOndeForamFeitasAsAlteracoes
-````
-
-<p> Após isso a branchOndeForamFeitasAsAlteracoes será unida a branchDeOrigem. Você deverá deletar a branchOndeForamFeitasAsAlteracoes. </p>
-
-````
-git branch -d branchOndeForamFeitasAsAlteracoes
-````
+<p> Se você não quiser usar o comando acima, poderá fazer da forma mais longa, usando o git branch e depois o git checkout. </p>
