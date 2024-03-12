@@ -8,7 +8,7 @@
 
 <h3> Configurações iniciais do git </h3>
 
-<p> Ao instalar o git no seu computador, abra o git bach e execute os seguintes comandos, um por vez: </p>
+<p> Ao instalar o git no seu computador, abra o <strong> git bash </strong> e execute os seguintes comandos, um por vez: </p>
 
 ````
   git config --global user.name = "Seu Nome"
@@ -21,7 +21,7 @@
 
 <h5> git add </h5>
 
-<p> Se você viu os vídeos acima sabe como e git funciona. Usando o git add você move os arquivos para a área de preparo, onde os arquivos serão preparados para serem salvos. Com o comando abaixo você pode fazer isso: </p>
+<p> Se você viu os vídeos acima sabe como e git funciona. Usando o git add você move os arquivos para a <strong> área de preparo </strong>, onde os arquivos serão preparados para serem salvos. Com o comando abaixo você pode fazer isso: </p>
 
 ````
   git add .
@@ -33,7 +33,7 @@
 ````
   git commit -m "fix: erro de requisição consertado"
 ````
-<p> Acima temos um exemplo de commit. A tag -m é passada para que não seja necessário editar o texto no bloco de notas ou editor que você tiver. O préfixo fix indica que o commit se trata de uma correção no código. Há uma padronização de como devem ser feitos os commits. </p>
+<p> Acima temos um exemplo de commit. A tag <strong> -m </strong> é passada para que não seja necessário editar o texto no bloco de notas ou editor que você tiver. O préfixo fix indica que o commit se trata de uma correção no código. Há uma <strong> padronização </strong> de como devem ser feitos os commits. </p>
 <p> os mais usados são: </p>
 <ul>  
   <li> fix para correções </li>
@@ -45,7 +45,7 @@
 
 <h3> git log </h3>
 
-<p> Quando criamos um commit um hash, sequência de caracteres que vai ser o identificador do commit é gerado e ligado a ele. Se executarmos o comando abaixo veremos isso: </p>
+<p> Quando criamos um commit um <strong> hash </strong>, sequência de caracteres que vai ser o identificador do commit é gerado e ligado a ele. Se executarmos o comando abaixo veremos isso: </p>
 
 ````
   git log
@@ -66,7 +66,7 @@ git reset --hard hashDoCommit
 
 <h3> git diff </h3>
 
-<p> Caso ao trabalhar numa branch você decida que quer saber o que mudou do estado atual para o último commit use um: </p>
+<p> Caso ao trabalhar numa <strong> branch </strong> você decida que quer saber o que mudou do estado atual para o último commit use um: </p>
 
 ````
   git diff
@@ -78,13 +78,13 @@ git reset --hard hashDoCommit
   git diff hashDoPrimeiroCommit hashDoSegundoCommit
 ````
 
-<p> Para facilitar a visualização da diferença entre commits é interessante usar a flag --oneline no git log para que não haja muita informação na tela. </p>
+<p> Para facilitar a visualização da diferença entre commits é interessante usar a flag <strong> --oneline </strong> no git log para que não haja muita informação na tela. </p>
 
 <h3> git branch </h3>
 
 <p> Quando vocês deseja fazer alterações num código mas não quer que um possível erro causado por elas se espalhe pelo software há um meio de fazer isso. Ao criar um branch você pode como que clonar todo o projeto para uma linha isolada, e assim você aplica as alterações nela, e se tudo ocorrer bem você une ela à linhagem que a deu origem.</p>
-<p> Num projeto git por padrão você trabalhará numa branch chamada master. Esta é a branch de produção, ou seja, a branch que contém o software no estado que os usuários veem. Todas as vezes que um software atualiza, essa é a branch de atualização. </p>
-<p> Os programadores criam uma branch que se origina na master, chamada develop, e essa é a branch que os desenvolvedores terão acesso. Quando a develop está com mudanças significativas e estáveis, ela é unida à master, para que os usuários tenham acesso à mudança. </p>
+<p> Num projeto git por padrão você trabalhará numa branch chamada <strong> master </strong>. Esta é a <strong> branch de produção </strong>, ou seja, a branch que contém o software no estado que os usuários veem. Todas as vezes que um software atualiza, essa é a branch de atualização. </p>
+<p> Os programadores criam uma branch que se origina na master, chamada <strong> develop </strong>, e essa é a branch que os desenvolvedores terão acesso. Quando a develop está com mudanças significativas e estáveis, ela é unida à master, para que os usuários tenham acesso à mudança. </p>
 <p> Os nomes utilizados nas branches  seguem um padrão, e são eles: </p>
 <ul>  
   <li> master (branch de produção) </li>
@@ -105,7 +105,7 @@ git reset --hard hashDoCommit
   git branch nomeDaBranchQueVoceQuerCriar
 ````
 
-<p> Com o temmpo será necessário deletar branches. Para isso você deve sair dela e executar o comando abaixo: </p>
+<p> Com o temmpo será necessário <strong> deletar branches </strong>. Para isso você deve sair dela e executar o comando abaixo: </p>
 
 ````
     git branch -d nomeDaBranchQueVaiSerDeletada
@@ -120,7 +120,7 @@ git reset --hard hashDoCommit
   git  checkout nomeDaBranchQueVoceQuerIr
 ````
 
-<p> Caso você queira criar uma nova branch e ir imediatamente para ela o comando abaixo faz isso: </p>
+<p> Caso você queira <strong> criar uma nova branch e ir imediatamente para ela </strong> o comando abaixo faz isso: </p>
 
 ````
   git checkout -b nomeDaBranchQueVaiSerCriada
@@ -140,20 +140,20 @@ git reset --hard hashDoCommit
 
 <h2> Trabalhando de forma remota </h2>
 
-<p> Até agora vimos que o git tem várias funcionalidades, porém tudo ainda é local. Quando você relizar um git commit isso ainda é visível apenas para você.  Quando se trabalha em equipes é necessário que todos tenham acesso à mesma versão do código. Por isso a plataforma git hub possui integração com o git, para que você possa armazenar seu proojeto lá, assim, as alterações que você  faz ficarão disponíveis para outras pessoas. </p>
-<p> Para isso crie uma conta no git hub, e então crie uma pasta nova, dando-a o mesmo nome do seu projeto. Um link ficará em evidência em sua tela, copie-o e verifique se ele é o da opção de http.</p>
-<p> Ele serve para que você conecte seu projeto local à esta pasta remota. Assim numa equipe todos terão um ponto de acesso em comum, já que o projeto estará na nuvem. Para que vocÇe conecte seu projeto local à sua pasta remota basta executar o comando abaixo:</p>
+<p> Até agora vimos que o git tem várias funcionalidades, porém <strong> tudo ainda é local </strong>. Quando você relizar um git commit isso ainda é visível apenas para você.  Quando se trabalha em equipes é necessário que todos tenham acesso à mesma versão do código. Por isso a plataforma git hub possui integração com o git, para que você possa armazenar seu proojeto lá, assim, as alterações que você  faz ficarão disponíveis para outras pessoas. </p>
+<p> Para isso crie uma conta no git hub, e então crie uma pasta nova, dando-a o mesmo nome do seu projeto. <strong> Um link ficará em evidência em sua tela </strong>, copie-o e verifique se ele é o da opção de http.</p>
+<p> <strong> Ele serve para que você conecte seu projeto local à esta pasta remota </strong>. Assim numa equipe todos terão um ponto de acesso em comum, já que o projeto estará na nuvem. Para que vocÇe conecte seu projeto local à sua pasta remota basta executar o comando abaixo:</p>
 
 ````
   git remote add origin linkQueVoceCopiou
 ````
 
-<p> Origin é o nome da conexão padrãpo do git, mas você poderá criar as suas com outros nomes. Assim você poderá usar os comandos a seguir para sincronizar o seu projeto local com o que está na nuvem. </p>
+<p> Origin é o nome da conexão padrãpo do git, mas você poderá criar as suas com outros nomes. Assim você poderá usar os comandos a seguir para <strong> sincronizar o seu projeto local com o que está na nuvem </strong>. </p>
 
 <h3> git push </h3>
 
-<p> Os commits que você realiza são locais, e caso uma outra pessoa deseje ter acesso a eles seus commits devem ser enviados para o git hub (ou outra plataforma que permita o mesmo). Para enviar seus commits para a nuvem você deve executar o git push. Quando você tem várias conexões no mesmo projeto você deverá indicar els no comando, mas se houver apenas uma e ela  for a origin o git push irá usar ela sem a necessidade de indicá-la. </p>
-<p> Se você estiver realizando um git push numa branch que existe apenas localmente mas não no git hub, o git irá te sugerir um comando que contem um set upstream. Basta copiar e colar ele, e quando você o executar ele irá enviar seus commits criando a branch. O comando é simples: </p>
+<p> Os commits que você realiza são locais, e caso uma outra pessoa deseje ter acesso a <strong> eles seus commits devem ser enviados para o git hub </strong> (ou outra plataforma que permita o mesmo). Para enviar seus commits para a nuvem você deve executar o git push. Quando você tem várias conexões no mesmo projeto você deverá indicar els no comando, mas se houver apenas uma e ela  for a origin o git push irá usar ela sem a necessidade de indicá-la. </p>
+<p> Se você estiver <strong> realizando um git push numa branch que existe apenas localmente </strong>mas não no git hub, <strong> o git irá te sugerir um comando que contem um set upstream </strong>. Basta copiar e colar ele, e quando você o executar <strong> ele irá enviar seus commits criando a branch </strong>. O comando é simples: </p>
 
 ````
   git push
@@ -161,10 +161,10 @@ git reset --hard hashDoCommit
 
 <h3> git pull </h3>
 
-<p> O git push envia seus commits para o git hub, mas ainda é necessário que você possa obter também as alterações que as outras pessoas enviaram> Para isso anvegue para a branch que você deseja receber as alterações e execute um git pull: </p>
+<p> O git push envia seus commits para o git hub, mas ainda é necessário que você possa <strong> obter também as alterações que as outras pessoas enviaram </strong>. Para isso anvegue para a branch que você deseja receber as alterações e execute um git pull: </p>
 
 ````
   git pull
 ````
 
-<p> Nunca realize um git push antes de um git pull, principalmente se o git push for forçado, pois você poderá sobrescrever as alterações das outras pessoas naquela branch. Quando se trabalha com compessoas no mesmo projeto é importante realizar um git pull logo ao iniciar suas tarefas para garantir que você está trabalhando na versão mais atual do projeto. </p>
+<p> <strong> Nunca realize um git push antes de um git pull </strong>, principalmente se o git push for forçado, pois você poderá sobrescrever as alterações das outras pessoas naquela branch. Quando se trabalha com compessoas no mesmo projeto é importante realizar um git pull logo ao iniciar suas tarefas para garantir que você está trabalhando na versão mais atual do projeto. </p>
